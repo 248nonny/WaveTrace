@@ -21,7 +21,8 @@ include_directories(${GTKMM_INCLUDE_DIRS} ${GLIBMM_INCLUDE_DIRS} ${PORTAUDIO_INC
 link_directories(${GTKMM_LIBRARY_DIRS} ${FFTW3_LIBRARY_DIRS} ) # ${GLOG_LIBRARY_DIRS}
 
 file(GLOB_RECURSE SOURCES "./src/*.cpp" "./src/*/*.cpp")
-add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
+# add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
+add_executable(${PROJECT_NAME} "test/FFTAgent-test.cpp" ${SOURCES}) # use for testing specific things; redefines main().
 
 target_include_directories(${PROJECT_NAME} PRIVATE .)
 
